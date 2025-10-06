@@ -1,7 +1,7 @@
 import './employers-list.css'
 import EmployersListItem from "../employers-list-item/employers-list-item"
 
-export const EmployersList = ({data}) => {
+export const EmployersList = ({data, onDelete}) => {
 
     const elements = data.map(item => {
         return (
@@ -9,7 +9,9 @@ export const EmployersList = ({data}) => {
             key={item.id} 
             name={item.name} 
             salary={item.salary}
-            increase={item.increase}/>
+            increase={item.increase}
+            onDelete={() => onDelete(item.id)
+            }/>
         )
     })
     return (
